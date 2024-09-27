@@ -5,9 +5,10 @@ from matplotlib.colors import LightSource, Normalize
 import mpl_toolkits.axes_grid1.inset_locator
 
 def plot_topo(arr, ax=None, cmap='Greys_r', shade=True, extent=None,        
-aspect='equal', vmin=-100, vmax=None):
+aspect='equal', vmin=-100, vmax=None, cbar=True):
   ax = get_ax(ax)
-  kwargs = dict(cmap=cmap, extent=extent, aspect=aspect, vmin=vmin, vmax=vmax)
+  kwargs = dict(cmap=cmap, extent=extent, aspect=aspect, vmin=vmin, vmax=vmax,
+                cbar=cbar)
   if shade:
     ax = shader(ax, arr, **kwargs)
   else:
